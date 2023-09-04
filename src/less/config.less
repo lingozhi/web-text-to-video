@@ -1,0 +1,61 @@
+// 变量
+@blue-light: #d9dfff;
+@blue: #3365e6;
+@blue-dark: #2260c9;
+@white: #ffffff;
+@gray-border: #f0f0f0;
+@gray: #96a0aa;
+@gray-text: #aaaaaa;
+@gray-border: #d0dbe5;
+@tab-active: #5d6884;
+@blue-light-color: #3ab3e3;
+@gray-iron-color: #5d6884;
+@grey-light-color: #d0dbe5;
+@blue-sky-color: #087cf7;
+@red-pale-color: #ff5a4d;
+@orange-warning: #f8992c;
+@green-color: #02cf87;
+@black: #000;
+
+@red: red;
+@pink: #ff3bd9;
+@purple: #745cb1;
+@yellow: #f8ba00;
+@gray-light: #8d8d8d;
+
+// 函数
+.clearfix() {
+    display: block;
+    content: '.';
+    clear: both;
+    height: 0;
+    line-height: 0;
+    visibility: hidden;
+}
+
+// 文本省略号
+.text-overflow() {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+//经常同时使用到的高及行高，使用如.height(30px)
+.height(@h: 30px) {
+    height: @h;
+    line-height: @h;
+}
+
+//  透明度设置
+.opacity(@opacity: 30) {
+    opacity: @opacity / 100;
+    filter: alpha(opacity= @opacity);
+}
+
+.user-center-block(@pdpx: 40px 150px 100px) {
+    width: 1080px;
+    padding: @pdpx;
+    background-color: #fff;
+    border-radius: 8px;
+    margin: 24px auto;
+}

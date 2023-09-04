@@ -1,0 +1,410 @@
+@import url('./reset.less');
+@import url('./config.less');
+
+html,
+body {
+    width: 100vw;
+    height: 100vh;
+    min-width: 1280px;
+}
+
+#root {
+    position: relative;
+    min-width: 1280px;
+    height: 100vh;
+    font-family: 'Microsoft YaHei';
+    color: #333333;
+    .no-data {
+        font-size: 14px;
+        color: #999;
+        padding: 5px;
+    }
+}
+
+// 滚动条相关
+/* 滚动条整体 */
+::-webkit-scrollbar {
+    height: 10px;
+    width: 10px;
+}
+/* 两个滚动条交接处 -- x轴和y轴 */
+::-webkit-scrollbar-corner {
+    background-color: transparent;
+}
+
+/* 滚动条滑块 */
+::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    -webkit-box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.2);
+    background: #999999;
+}
+
+/* 滚动条轨道 */
+::-webkit-scrollbar-track {
+    // -webkit-box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    background: #ededed;
+}
+
+// antd 样式重置相关
+.ant-image-preview-operations-wrapper {
+    .ant-image-preview-operations {
+        background-color: rgba(0, 0, 0, 0.8);
+    }
+}
+
+.ant-tabs-tab-btn {
+    &:focus-visible {
+        outline: none !important;
+    }
+}
+
+// 页面通用相关
+.sc-page {
+    display: flex;
+    height: 100%;
+    min-width: 1280px;
+
+    .sc-page__sidebar {
+        width: 400px;
+        height: 100%;
+        padding: 20px;
+        &.disable-tree {
+            .input-wrap {
+                cursor: not-allowed;
+                .search-box {
+                    pointer-events: none;
+                }
+            }
+            .ant-tree-node-content-wrapper {
+                pointer-events: none;
+            }
+        }
+    }
+    .sc-page__container {
+        margin: 20px 24px 20px 0;
+        flex: 1;
+        overflow-y: auto;
+        flex-direction: column;
+        display: flex;
+        background-color: #fff;
+        border: 1px solid #9ab9d1;
+        border-radius: 4px;
+        padding: 16px;
+
+        .sc-page__crumbs {
+            margin-bottom: 16px;
+        }
+        .sc-page__content {
+            margin: 0 8px;
+            flex: 1;
+        }
+        &:only-child {
+            margin-left: 24px;
+        }
+    }
+}
+
+// 业务模块相关
+.sc-page {
+    .batch-btn {
+        height: 24px;
+        line-height: 12px;
+        border-radius: 2px;
+        margin-bottom: 8px;
+        padding: 0 4px;
+        margin-left: 16px;
+        span {
+            color: #666;
+            font-size: 12px;
+        }
+    }
+    .enclosure {
+        .ant-form-item-label {
+            text-indent: 6px;
+        }
+    }
+    .wom-wp__header {
+        background: rgba(17, 141, 236, 0.05);
+        border-radius: 4px;
+        padding: 8px 16px;
+        margin-bottom: 16px;
+        .select-row {
+            display: flex;
+            flex-wrap: wrap;
+            .select-item {
+                display: flex;
+                align-items: center;
+                margin-right: 56px;
+                .ant-radio-group {
+                    margin-right: 10px;
+                    label {
+                        height: 29px;
+                        line-height: 26px;
+                        font-size: 12px;
+                        color: #aaaaaa;
+                        border-radius: 2px !important;
+                    }
+                    .ant-radio-button-wrapper-checked {
+                        background: linear-gradient(132deg, #7ac0f6 0%, #118dec 100%);
+                        color: #fff;
+                        border-color: #7ac0f6;
+                    }
+                }
+
+                .ant-select-selector {
+                    border-color: #78bff5;
+                    border: 1px solid #78bff5 !important;
+                }
+                & > span {
+                    font-size: 14px;
+                    font-weight: bold;
+                    white-space: nowrap;
+                }
+                & > input {
+                    border-color: #78bff5;
+                    width: 180px;
+                    height: 30px;
+                }
+                .filter-pane {
+                    margin-left: 4px;
+                    font-size: 12px;
+                    .ant-picker {
+                        border-radius: 2px;
+                    }
+                }
+                .tab-list {
+                    display: flex;
+                    flex-wrap: wrap;
+                    li {
+                        border-radius: 2px;
+                        border: 1px solid #78bff5;
+                        min-width: 80px;
+                        padding: 0 10px;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        height: 28px;
+                        font-size: 12px;
+                        color: #118dec;
+                        cursor: pointer;
+                        user-select: none;
+                        margin: 6px 4px;
+                        background-color: #fff;
+                        transition: all 0.3s;
+                        white-space: nowrap;
+                        &.active {
+                            background: linear-gradient(132deg, #79bff5 0%, #128dec 100%);
+                            border: none;
+                            color: #fff;
+                        }
+                        &:hover {
+                            opacity: 0.8;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+html {
+    // antd 样式修改
+    .ant-select-single .ant-select-selector,
+    .ant-select-selector,
+    .ant-input {
+        border-radius: 2px !important;
+    }
+    button {
+        border-radius: 2px !important;
+        outline: none !important;
+    }
+    input {
+        border: none;
+        outline: none;
+    }
+    .ant-select-selector {
+        background-color: #fff;
+        border: 1px solid #d9d9d9;
+    }
+    .ant-select-selection-search {
+        margin-top: 1px;
+    }
+    .ant-empty-description {
+        font-size: 12px;
+        text-align: center;
+    }
+
+    // 弹框样式
+    .z-ant-modal-wrap {
+        .select-radio {
+            padding-bottom: 25px;
+            border-bottom: 1px solid #dddddd;
+            margin-bottom: 24px;
+            .title {
+                width: 86px;
+                color: #666666;
+                text-indent: 12px;
+                margin-bottom: 12px;
+            }
+            .ant-radio-group {
+                margin-left: 16px;
+                margin-bottom: 12px;
+                .ant-radio-wrapper {
+                    span {
+                        color: #333;
+                    }
+                }
+            }
+            .msgs {
+                color: #666666;
+                text-indent: 40px;
+                span {
+                    color: #ff4d4f;
+                    margin: 0 2px;
+                }
+            }
+        }
+        .ant-input-textarea-show-count {
+            font-size: 12px;
+        }
+        .ant-modal .ant-modal-content {
+            border-radius: 4px !important;
+            padding: 40px 65px 20px;
+        }
+        .ant-modal-title {
+            font-size: 18px;
+            margin-bottom: 40px !important;
+            text-align: center;
+        }
+        .ant-form-item {
+            border-bottom: 1px solid #dddddd;
+            padding-bottom: 25px;
+            &:nth-last-child(1),
+            &:nth-last-child(2) {
+                border-bottom: none;
+            }
+            &:nth-last-child(1) {
+                margin-bottom: 0;
+            }
+        }
+        .ant-form-item-label {
+            width: 86px;
+            text-align: left;
+            label {
+                color: #666666;
+            }
+        }
+        .enclosure {
+            .ant-form-item-label > label {
+                text-indent: 12px;
+                &::after {
+                    text-indent: 0;
+                }
+            }
+        }
+        .upload-file .ant-upload-list {
+            width: 100%;
+        }
+        .model-submit {
+            text-align: center;
+            button {
+                margin: 0 20px;
+                min-width: 120px;
+                height: 40px;
+                border-radius: 2px;
+                font-size: 14px;
+                &.ant-btn-primary {
+                    background: linear-gradient(132deg, #7ac0f6 0%, #118dec 100%);
+                    border: none;
+                }
+                &.ant-btn-default {
+                    border: 1px solid #118dec;
+                    color: #118dec;
+                }
+            }
+        }
+        .ant-modal-confirm-confirm {
+            .ant-modal-content {
+                margin: 40px 0;
+                max-width: initial;
+            }
+            .ant-modal-confirm-title {
+                text-align: center;
+                margin-bottom: 8px;
+            }
+            .ant-modal-confirm-btns {
+                text-align: center;
+            }
+            button {
+                margin: 0 20px;
+                border-radius: 2px;
+                font-size: 14px;
+                &.ant-btn-primary {
+                    background: linear-gradient(132deg, #7ac0f6 0%, #118dec 100%);
+                    border: none;
+                }
+                &.ant-btn-default {
+                    border: 1px solid #118dec;
+                    color: #118dec;
+                }
+            }
+        }
+    }
+    .z-ant-modal-hack {
+        opacity: 0;
+    }
+
+    // 细条滚动条
+    .min-scroll {
+        &::-webkit-scrollbar {
+            height: 4px;
+            width: 4px;
+        }
+
+        &::-webkit-scrollbar-corner {
+            background-color: transparent;
+        }
+
+        &::-webkit-scrollbar-thumb {
+            border-radius: 4px;
+            -webkit-box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.2);
+            background: #999999;
+        }
+
+        &::-webkit-scrollbar-track {
+            border-radius: 4px;
+            background: #f1f1f1;
+        }
+    }
+}
+
+// 树筛选条件 radio group样式覆盖
+.tree-radio-group {
+    display: flex !important;
+    text-align: center;
+
+    .ant-radio-button-wrapper {
+        flex: 1;
+        height: 36px;
+        line-height: 34px;
+        background: rgba(17, 141, 236, 0.05);
+        color: #118dec;
+        border-color: #118dec !important;
+        padding-inline: 0;
+        &:first-child {
+            border-start-start-radius: 2px;
+            border-end-start-radius: 2px;
+        }
+        &:last-child {
+            border-start-end-radius: 2px;
+            border-end-end-radius: 2px;
+        }
+        &:not(:first-child)::before {
+            background-color: #118dec;
+        }
+    }
+}
+
+.echarts-formatter-style {
+}
